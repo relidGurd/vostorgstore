@@ -24,7 +24,7 @@ export default function Home() {
       password: password
     }
 
-    await fetch("http://localhost:3001/login", {
+    await fetch("http://localhost:3001/api/login", {
         method: "post",
         headers: {
           'Accept': 'application/json',
@@ -39,10 +39,17 @@ export default function Home() {
       });
     
   }
+  const formStyle: any = {
+    display: 'flex',
+    flexDirection: 'column'
+  }
 
   return (
     <main className={styles.main}>
-      <form onSubmit={(e:any) => onSubmitHandler(e)}>
+      <h1>
+        Войти
+      </h1>
+      <form style={formStyle} onSubmit={(e:any) => onSubmitHandler(e)}>
           <input type="text" onChange={(e: any) => handlerInputUsername(e)} value={username}/>
           <input type='text' onChange={(e: any) => handlerInputPassword(e)} value={password} />
           <button>Отправить</button>
