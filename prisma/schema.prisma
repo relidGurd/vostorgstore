@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id       Int     @id @default(autoincrement())
+  username String? @db.VarChar(255)
+  password String? @db.VarChar(255)
+}
+
+model products {
+  id        Int      @id @default(autoincrement())
+  title     String
+  decription   String?
+  price Int
+  author String
+  images String[]
+  published Boolean? @default(false)
+  categories CategoriesOnProducts[]
+  subcategories subCategoryOnProducts[]
+}
+
+
+model category {
+  id    Int                 @id @default(autoincrement())
+  name  String
+  posts CategoriesOnProducts[]
+  subcategory subcategory[]
+  @@unique([name])
+}
+
+model CategoriesOnProducts {
+  products       products     @relation(fields: [productsId], references: [id])
+  productsId     Int // relation scalar field (used in the `@relation` attribute above)
+  category   category @relation(fields: [categoryId], references: [id])
+  categoryId Int // relation scalar field (used in the `@relation` attribute above)
+  assignedAt DateTime @default(now())
+  assignedBy String
+  categoryName String
+  @@id([productsId, categoryId])
+}
+
+
+model subcategory {
+  id Int  @id @default(autoincrement())
+  parentCategoryId Int
+  name String
+  posts subCategoryOnProducts[]
+  parent category @relation(fields: [parentCategoryId], references: [id])
+}
+
+
+
+model subCategoryOnProducts {
+  products       products     @relation(fields: [productsId], references: [id]) 
+  productsId     Int // relation scalar field (used in the `@relation` attribute above)
+
+  subcategory   subcategory @relation(fields: [subCategoryId], references: [id])
+  subCategoryId Int // relation scalar field (used in the `@relation` attribute above)
+
+  @@id([productsId, subCategoryId])
+}
+
+
+
+
+

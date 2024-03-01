@@ -1,26 +1,33 @@
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import {useEffect, useState} from 'react'
 
 
 
 
 function isAuth () {
-    const [isLiggin, setIsLoggin] = useState(false)
-
+  const [isLoggin, setIsLoggin] = useState(false)
+  const router = useRouter()
 
 
   useEffect(() => {
-    const test = localStorage.getItem('token')
-    
-    if (test) {
+    const token:any = localStorage.getItem('token')
+    fetch("http://localhost:3001/api/validate", {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${JSON.parse(token)}`
+      }
+    }).then((res: any) => {
+      if (!res.ok) {
+        router.push('/')
+      } else {
         setIsLoggin(true)
-    } else {
-        redirect("/")
-    }
+      }
+    })
+
   }, [])  
 
 
-  return isLiggin
+  return isLoggin
 }
 
 export default isAuth

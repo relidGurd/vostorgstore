@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 
 export default function authCheck(req, res, next) {
   const authorizationToken = req.headers.authorization;
+
   const accessToken = authorizationToken.split(" ")[1];
 
   if (!authorizationToken || !accessToken) {
