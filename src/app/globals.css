@@ -11,6 +11,10 @@ section {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 :root {
   --main-orange: #ff6900;
   --main-green: #d1cc00;
@@ -28,14 +32,18 @@ h3 {
   font-size: 32px;
 }
 
+span {
+  display: block;
+}
+
 button {
   border: none;
-  background-color: red;
+  background-color: transparent;
 }
 
 .container {
-  margin-left: 280px;
-  margin-right: 280px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .container-border {

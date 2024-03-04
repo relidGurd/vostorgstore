@@ -10,84 +10,131 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useAppSelector } from "@/lib/hooks";
+import { useEffect, useState } from "react";
+import ButtonIcon from "@/icons/button";
 
 const MainPage = ({ props }: any) => {
   const count = useAppSelector((state) => state.counter.value);
+  const [resizeVideoValue, setResizeVideoValue] = useState(35);
+  const [pos, setPos] = useState(0);
 
-  console.log(count);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const resizeVideo = (e: any) => {
+    const windowPos = window.scrollY;
+    setPos(windowPos);
+    if (pos < window.scrollY) {
+      setResizeVideoValue(resizeVideoValue - 1);
+      if (resizeVideoValue <= 0) {
+        setResizeVideoValue(0);
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", (e: any) => resizeVideo(e));
+    return () => document.removeEventListener("scroll", resizeVideo);
+  }, [resizeVideoValue]);
 
   return (
     <main>
-      <section className={styles.bannerSection}>
-        <Image
-          className={styles.banner}
-          src="/products/test.jpg"
-          width={1280}
-          height={1280}
-          alt="test"
-        />
-      </section>
-      <section className={styles.description}>
-        <div className={styles.descript}>
-          <div className={`${styles.descriptionTitle}`}>
-            <div className={`container`}>
-              <h1 className={`blue`}>
-                АРТ - <br />
-                <span className={styles.descriptionTitleSub}>ОБЪЕДИНЕНИЕ</span>
-              </h1>
+      <section className={`container ${styles.mainSliderContainer}`}>
+        <div className={styles.mainSlider}>
+          <div className={styles.ggg}>
+            <div className={styles.descriptionSection}>
+              <div className={styles.descSideSec}>
+                <h1 className={styles.titleSlider}>
+                  VOSTORG
+                  <span> _ ХУДОЖНИКИ</span>
+                </h1>
+                <div className={styles.verticalLine}>d</div>
+                <div>123123134</div>
+              </div>
+              <div className={`${styles.descSideSec} ${styles.t}`}>
+                <div>
+                  <LogoIcon />
+                </div>
+                <p>text</p>
+              </div>
+            </div>
+            <div
+              style={{
+                clipPath: `inset(${resizeVideoValue}% round 1rem)`,
+                transition: "clip-path 0.5s ease-out",
+              }}
+              className={`${styles.videoSliderContainer}`}
+            >
+              <video className={styles.videoSlider} autoPlay muted>
+                <source src="/signal.mp4" />
+              </video>
             </div>
           </div>
         </div>
-
-        <div className={`container currentGrid`}>
-          <p className={styles.text}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
-            labore veritatis nobis inventore necessitatibus, qui sunt numquam?
-            Minus sed illo, veritatis possimus iusto veniam culpa aliquam.
-            Repellendus quod odit esse.Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Dicta labore veritatis nobis inventore
-            necessitatibus, qui sunt numquam? Minus sed illo, veritatis possimus
-            iusto veniam culpa aliquam. Repellendus quod odit esse.
-          </p>
-        </div>
       </section>
+      <section style={{ paddingTop: "1rem" }} className={`container`}>
+        <ul className={styles.cardList}>
+          <li className={`${styles.card} ${styles.cardContainer}`}>
+            <span className={`${styles.mainCardTitle}`}>ЧТО МЫ ДЕЛАЕМ</span>
+          </li>
+          <li className={styles.card}>
+            <div className={`${styles.cardContainer} ${styles.titleSize}`}>
+              200+
+            </div>
 
-      <section className={`section-green`}>
-        <div className={`container`}>
-          <div>
-            <LogoIcon />
-          </div>
-        </div>
+            <div className={styles.cardMore}>
+              <div className={styles.cardContainer}>
+                <span>Художников</span>
+                <button className={styles.cardButton}>
+                  <ButtonIcon />
+                </button>
+              </div>
+            </div>
+          </li>
+          <li className={styles.card}>
+            <div className={`${styles.cardContainer} ${styles.titleSize}`}>
+              100
+            </div>
 
-        <div className={`container container-border currentGrid`}>
-          <div className={`${styles.numbers}`}>ghbdtn</div>
-        </div>
-      </section>
+            <div className={styles.cardMore}>
+              <div className={styles.cardContainer}>
+                <span>Городов</span>
+                <button className={styles.cardButton}>
+                  <ButtonIcon />
+                </button>
+              </div>
+            </div>
+          </li>
+          <li className={styles.card}>
+            <div className={`${styles.cardContainer} ${styles.titleSize}`}>
+              50
+            </div>
 
-      <section className={`container`}>
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          slidesPerView={4}
-          className={`${styles.prodList}`}
-          spaceBetween={15}
-        >
-          {props.data.map((el: any) => (
-            <Link key={el.id} href={`/store/${el.id}`}>
-              <SwiperSlide key={el.id} className={styles.productItem}>
-                <Link href={`/store/${el.id}`} className={styles.card}>
-                  <Image
-                    className={`${styles.productItemImage}`}
-                    src={`/products/test.jpg`}
-                    width={200}
-                    height={300}
-                    alt="Test"
-                  />
-                  <p style={{ display: "block", color: "black" }}>{el.title}</p>
-                </Link>
-              </SwiperSlide>
-            </Link>
-          ))}
-        </Swiper>
+            <div className={styles.cardMore}>
+              <div className={styles.cardContainer}>
+                <span>Резидентов</span>
+                <button className={styles.cardButton}>
+                  <ButtonIcon />
+                </button>
+              </div>
+            </div>
+          </li>
+          <li className={styles.card}>
+            <div className={`${styles.cardContainer} ${styles.titleSize}`}>
+              800
+            </div>
+
+            <div className={styles.cardMore}>
+              <div className={styles.cardContainer}>
+                <span>Событий</span>
+                <button className={styles.cardButton}>
+                  <ButtonIcon />
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
   );
