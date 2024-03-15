@@ -1,0 +1,41 @@
+.productCard {
+  grid-column: span 2 / span 2;
+  cursor: pointer;
+  height: 100%;
+}
+.productCardImageContainer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(--main-orange);
+}
+
+.productCard:hover .productCardImage {
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+}
+
+.productCardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.descriptionContainer {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.productCard:hover .descTitle {
+  text-decoration: underline;
+  transition: text-decoration 4s ease-out;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: black;
+}

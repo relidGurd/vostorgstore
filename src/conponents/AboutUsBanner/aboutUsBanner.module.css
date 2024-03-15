@@ -1,0 +1,29 @@
+.contactSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  padding: 10rem 0;
+}
+
+.contactSectionItem {
+  grid-column: span 2 / -1;
+}
+
+.aboutUsMoreSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.aboutUsButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 0.5rem;
+  text-align: right;
+  color: white;
+  font-size: 12px;
+  position: relative;
+}

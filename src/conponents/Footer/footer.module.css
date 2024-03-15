@@ -1,0 +1,101 @@
+.footerSectionOne {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 90px 0 30px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footerMenu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  font-size: 25px;
+}
+
+.footerLogo {
+  cursor: pointer;
+  font-size: 150px;
+  font-weight: 700;
+  color: #e5e5e5;
+  transition: color 0.2s ease;
+}
+
+.footerLogo:hover {
+  color: #cccccc;
+  transition: color 0.2s ease;
+}
+
+.footerDescription {
+  font-size: 40px;
+  font-weight: 500;
+  width: 75%;
+}
+
+.mailFooter {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.footerMenuItemTitle {
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.footerMenuList li {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.footerMenuList li:hover {
+  text-decoration: underline;
+}
+
+.mailSendInput,
+.mailSendButton {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #cccccc;
+  padding: 1.5rem;
+  border: none;
+  font-size: 20px;
+}
+
+.mailSendInput {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.mailSendButton {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.mailSendInput::placeholder {
+  color: #cccccc;
+}
+
+.inputTerms {
+  margin-top: 15px;
+  width: 50%;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.termsSection {
+  grid-column: span 2 / span 2;
+  margin-top: 120px;
+  display: grid;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}

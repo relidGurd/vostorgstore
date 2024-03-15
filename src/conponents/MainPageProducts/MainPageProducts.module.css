@@ -1,0 +1,84 @@
+.testContainerItem {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  margin-top: 17rem;
+  margin-bottom: 5rem;
+}
+
+.testContainerItem:nth-last-child(1) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.containerTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.containerDescription {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerDescriptionText {
+  font-size: 40px;
+  font-weight: 700;
+  width: 50%;
+}
+
+.productsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 16px;
+}
+
+.containerDescriptionBlink {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.productsGrid li:nth-child(2) {
+  grid-column: span 1 / span 1;
+}
+.productsGrid li:nth-child(3) {
+  grid-column: span 1 / span 1;
+}
+
+.productsGrid li:nth-child(5) {
+  grid-column: span 1 / span 1;
+}
+.productsGrid li:nth-child(6) {
+  grid-column: span 1 / span 1;
+}
+
+.containerDescriptionBlink {
+  display: flex;
+}
+
+.blinkSlach {
+  display: inline-block;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  0%,
+  49.9% {
+    opacity: 1;
+  }
+  50%,
+  99.9% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
