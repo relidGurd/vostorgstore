@@ -2,7 +2,6 @@
 import { useInView } from "react-intersection-observer";
 import styles from "./cardsNumber.module.css";
 import ButtonIcon from "@/icons/button";
-import { useState } from "react";
 
 interface NumberCard {
   url: string;

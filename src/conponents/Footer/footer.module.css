@@ -99,3 +99,28 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
+
+@media screen and (max-width: 780px) {
+  .footerSectionOne {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerLogo {
+    font-size: 50px;
+  }
+
+  .mailFooter,
+  .footerDescription {
+    font-size: 18px;
+  }
+
+  .footerMenu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-size: 18px;
+  }
+}

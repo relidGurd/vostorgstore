@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import StoreComponent from "@/pages/store/Store";
 
 async function getData({ params }: { params: { slug: string[] } }) {
   const res = await fetch(`http://localhost:3001/api/categories`, {
@@ -43,7 +44,7 @@ async function getProduct({ params }: { params: { slug: string[] } }) {
   return res.json();
 }
 
-export default async function Store({
+export default async function StorePage({
   params,
 }: {
   params: { slug: string[] };
@@ -81,19 +82,22 @@ export default async function Store({
 
   const { data }: any = await getData({ params });
   return (
-    <ul>
-      {data.map((el: any) => (
-        <li key={el.id}>
-          <Link href={`/store/category/${el.id}`}>{el.name}</Link>
-          <div>
-            {el.subcategory.map((sub: any) => (
-              <Link key={sub.id} href={`/store/subcategory/${sub.id}`}>
-                {sub.name}
-              </Link>
-            ))}
-          </div>
-        </li>
-      ))}
-    </ul>
+    <main>
+      <StoreComponent props={data} />
+    </main>
+    // <ul>
+    //   {data.map((el: any) => (
+    //     <li key={el.id}>
+    //       <Link href={`/store/category/${el.id}`}>{el.name}</Link>
+    //       <div>
+    //         {el.subcategory.map((sub: any) => (
+    //           <Link key={sub.id} href={`/store/subcategory/${sub.id}`}>
+    //             {sub.name}
+    //           </Link>
+    //         ))}
+    //       </div>
+    //     </li>
+    //   ))}
+    // </ul>
   );
 }

@@ -106,3 +106,10 @@
   animation-fill-mode: forwards; /* Эффект анимации после завершения */
   opacity: 0; /* Изначально установите нулевую прозрачность */
 }
+
+@media screen and (max-width: 760px) {
+  .cardList {
+    display: flex;
+    flex-direction: column;
+  }
+}

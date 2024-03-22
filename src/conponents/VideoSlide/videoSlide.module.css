@@ -1,5 +1,5 @@
 .mainSliderContainer {
-  height: 200vh;
+  height: 250vh;
   position: relative;
   margin-top: -90px;
 }
@@ -20,7 +20,7 @@
 
 .ggg {
   position: relative;
-  height: 98vh;
+  height: 100vh;
 }
 .descriptionSection {
   display: flex;
@@ -36,11 +36,12 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 50px;
+  font-size: 100px;
 }
 .titleSlider {
-  font-size: 100px;
   color: var(--main-orange);
   width: 50%;
+  font-size: 100px;
 }
 
 .blinkSlach {
@@ -106,4 +107,33 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 760px) {
+  .descriptionSection {
+    position: static;
+    height: auto;
+  }
+  .mainSliderContainer {
+    height: 150vh;
+    position: relative;
+    margin-top: -90px;
+  }
+
+  .titleSlider {
+    font-size: 40px;
+  }
+
+  .descSideSec {
+    font-size: 40px;
+  }
+
+  .t {
+    display: none;
+  }
+
+  .ggg {
+    position: relative;
+    height: 100%;
+  }
 }

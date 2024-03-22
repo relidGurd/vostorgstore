@@ -1,8 +1,8 @@
 const LogoIcon = ({ color }: any) => {
   return (
     <svg
-      width="79"
-      height="67"
+      width="50"
+      height="50"
       viewBox="0 0 79 67"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

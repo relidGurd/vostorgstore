@@ -1,3 +1,9 @@
+.navContaiener {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .headerMenu {
   position: sticky;
   top: 0;
@@ -10,11 +16,29 @@
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 0px;
+  align-items: center;
+  padding: 0.5rem 0;
 }
 .menuList {
   display: flex;
   align-items: center;
+  font-weight: 700;
 }
 .menuList li {
   padding: 1rem;
+  cursor: pointer;
+}
+
+.menuLink {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 760px) {
+  .headerMenu {
+    display: none;
+  }
 }

@@ -11,9 +11,21 @@ const WhatWeDoItem = ({ url }: any) => {
     offset: ["start end", "center center"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (latest: any) => {
-    useSetPath(100 - latest * 100);
-  });
+  // useMotionValueEvent(scrollYProgress, "change", (latest: any) => {
+  //   useSetPath(100 - latest * 100);
+  // });
+
+  useEffect(() => {
+    const resizeImage = (latest: number) => {
+      useSetPath(100 - latest * 100);
+    };
+
+    const unsubX = scrollYProgress.on("change", resizeImage);
+
+    return () => {
+      unsubX();
+    };
+  }, [scrollYProgress]);
 
   return (
     <li ref={ref} className={styles.testContainerItem}>
@@ -35,7 +47,7 @@ const WhatWeDoItem = ({ url }: any) => {
           overflow: "hidden",
           transformOrigin: "0%",
           clipPath: `inset(0% ${setPath}% 0% 0% round 1rem)`,
-          transition: "clip-path 0.5s ease-out",
+          transition: "clip-path 1s cubic-bezier( 0.215, 0.61, 0.355, 1 )",
         }}
       >
         <Image

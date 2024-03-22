@@ -1,29 +1,36 @@
 "use client";
 import LogoIcon from "@/icons/logo";
 import styles from "./videoSlide.module.css";
-import { useEffect, useState, useRef } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useEffect, useState, useRef, useCallback } from "react";
+import { motion, useScroll } from "framer-motion";
 
 const VideoSlide = () => {
   const ref = useRef(null);
   const { scrollYProgress }: any = useScroll({
     target: ref,
-    offset: ["end end", "start start"],
+    offset: ["center center", "start start"],
   });
 
   const [videoVal, setVideoVal] = useState(35);
 
-  useMotionValueEvent(scrollYProgress, "change", (latest: any) => {
-    const calculatedValue = latest * 35;
-    const newValue = calculatedValue >= 0 ? Math.min(calculatedValue, 35) : 0;
-    setVideoVal(newValue);
-  });
-
   useEffect(() => {
-    if (window.scrollY === 0) {
-      setVideoVal(35);
-    }
-  }, [videoVal]);
+    const doSomething = (latest: any) => {
+      const calculatedValue = latest * 35;
+      const newValue = calculatedValue >= 0 ? Math.min(calculatedValue, 35) : 0;
+      setVideoVal(newValue);
+      if (window.scrollY === 0) {
+        setVideoVal(35);
+        if (window.innerWidth <= 630) {
+          setVideoVal(20);
+        }
+      }
+    };
+
+    const unsubY = scrollYProgress.on("change", doSomething);
+    return () => {
+      unsubY();
+    };
+  }, [scrollYProgress, videoVal]);
 
   return (
     <section ref={ref} className={`container ${styles.mainSliderContainer}`}>
@@ -38,15 +45,6 @@ const VideoSlide = () => {
                   <span className={styles.blinkSlach}>_</span> ХУДОЖНИКИ
                 </span>
               </h1>
-              <div className={styles.slideMenuContainer}>
-                <ul className={styles.slideMenu}>
-                  <li>О нас</li>
-                  <li>Магазин</li>
-                  <li>Художники</li>
-                  <li>Парнтнерам</li>
-                  <li>Контакты</li>
-                </ul>
-              </div>
             </div>
             <div className={`${styles.descSideSec} ${styles.t}`}>
               <div
@@ -56,12 +54,12 @@ const VideoSlide = () => {
                   justifyContent: "flex-end",
                 }}
               >
-                <LogoIcon color={"#FF6900"} />
+                <LogoIcon color="#FF6900" />
               </div>
               <div className={styles.slideTextContainer}>
                 <p className={styles.slideText}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Culpa, quidem! Suscipit, libero! Voluptatum
+                  VOSTORG — это объединение творцов и авторов художественных и
+                  креативных индустрий.
                 </p>
                 <span
                   style={{
@@ -79,7 +77,7 @@ const VideoSlide = () => {
           </div>
           <motion.div
             style={{
-              transition: "clip-path 0.5s ease",
+              transition: "clip-path 1s cubic-bezier( 0.23, 1, 0.32, 1 )",
               clipPath: `inset(${videoVal}% round 1rem)`,
             }}
             className={`${styles.videoSliderContainer}`}

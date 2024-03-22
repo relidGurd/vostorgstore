@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={manrope.className}>
-        {/* <HeaderMenu /> */}
+        <HeaderMenu />
         <StoreProvider>{children}</StoreProvider>
         <Footer />
       </body>

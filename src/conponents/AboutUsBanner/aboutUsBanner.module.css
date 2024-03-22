@@ -27,3 +27,10 @@
   font-size: 12px;
   position: relative;
 }
+
+@media screen and (max-width: 760px) {
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+  }
+}
