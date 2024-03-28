@@ -17,7 +17,7 @@ const BubbleLogo = () => {
         <g>
           <image
             style={{ overflow: "visible" }}
-            xlinkHref="E3D4EEC3.png"
+            href="/path/to/your/image.png" // Укажите абсолютный путь к изображению
             transform="matrix(6.445312e-02 0 0 6.445312e-02 1.4677 0.9814)"
           ></image>
         </g>

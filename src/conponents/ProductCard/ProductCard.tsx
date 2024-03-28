@@ -6,29 +6,30 @@ import styles from "./productCard.module.css";
 
 interface ICardInterface {
   id: number;
-  title: string;
-  images: [string];
+  attributes: any;
 }
 
 interface IProp {
   card: ICardInterface;
 }
 
-const ProductCard = ({ card }: IProp) => {
+const ProductCard = ({ card }: any) => {
+  const { id, attributes } = card;
+
   return (
     <li className={styles.productCard}>
-      <Link className={styles.cardLink} href={`/store/${card.id}`}>
+      <Link className={styles.cardLink} href={`/store/${id}`}>
         <div className={styles.productCardImageContainer}>
           <Image
             className={styles.productCardImage}
             width={1000}
             height={1000}
             alt={"213123"}
-            src={`${card.images[0]}`}
+            src={`http://localhost:1337${attributes.product_image.data.attributes.url}`}
           />
         </div>
         <div className={styles.descriptionContainer}>
-          <span className={styles.descTitle}>{card.title}</span>
+          <span className={styles.descTitle}>{attributes.Title}</span>
           <span>Вася Пупкин</span>
           <span>(2022)</span>
         </div>

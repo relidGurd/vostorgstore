@@ -39,18 +39,9 @@ const PageSlide = ({ props }: any) => {
         >
           <h1 style={{ color: "white", fontSize: "80px" }}>Магазин</h1>
           <div style={{ width: "30%", margin: "auto" }}>
-            <BubbleLogo />
+            {/* <BubbleLogo /> */}
           </div>
         </motion.div>
-      </div>
-      <div style={{ backgroundColor: "black" }}>
-        <div
-          style={{
-            backgroundColor: "white",
-            height: "100vh",
-            borderRadius: `2rem 2rem 0 0`,
-          }}
-        ></div>
       </div>
     </section>
   );

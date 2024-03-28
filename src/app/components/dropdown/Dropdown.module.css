@@ -1,0 +1,7 @@
+.dropList {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  padding: 1rem;
+  z-index: 1;
+}

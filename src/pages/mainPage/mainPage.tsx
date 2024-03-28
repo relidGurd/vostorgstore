@@ -57,7 +57,7 @@ const MainPage = ({ props }: any) => {
         </ul>
       </section>
 
-      <MainPageProducts cardList={props.data} />
+      <MainPageProducts cardList={props} />
       <AboutUsBunner url="/" buttonText="Работы" />
       <ContactUs />
     </>
