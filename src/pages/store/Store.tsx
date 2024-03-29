@@ -61,7 +61,10 @@ const StoreComponent = ({ categories, products }: any) => {
                       <button className={styles.filterButton}>Материал</button>
                     }
                   >
-                    <ul className={styles.filtersListContainen}>
+                    <ul
+                      style={{ width: "100%" }}
+                      className={styles.filtersListContainen}
+                    >
                       <li className={styles.filtersListContainenItem}>Акрил</li>
                       <li className={styles.filtersListContainenItem}>
                         Акварель

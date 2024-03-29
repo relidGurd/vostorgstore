@@ -18,7 +18,7 @@ const ProductCard = ({ card }: any) => {
 
   return (
     <li className={styles.productCard}>
-      <Link className={styles.cardLink} href={`/store/${id}`}>
+      <Link className={styles.cardLink} href={`/${id}`}>
         <div className={styles.productCardImageContainer}>
           <Image
             className={styles.productCardImage}

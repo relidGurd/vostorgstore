@@ -52,7 +52,7 @@ const Dropdown = ({
       <div onClick={handleOpen}>{button}</div>
       {isDropdownOpen && (
         <div>
-          <div>{children}</div>
+          <div style={{ position: "relative", width: "100%" }}>{children}</div>
         </div>
       )}
     </div>
