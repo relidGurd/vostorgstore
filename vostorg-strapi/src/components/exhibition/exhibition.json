@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_exhibition_exhibitions",
+  "info": {
+    "displayName": "Exhibition",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "Year": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Place": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string"
+    }
+  }
+}

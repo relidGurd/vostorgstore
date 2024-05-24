@@ -8,24 +8,25 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
-    },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product",
-      "mappedBy": "category"
+    "title": {
+      "type": "string",
+      "required": true
     },
     "subcategories": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::subcategory.subcategory",
       "mappedBy": "category"
+    },
+    "pictures": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::picture.picture",
+      "mappedBy": "categories"
     }
   }
 }

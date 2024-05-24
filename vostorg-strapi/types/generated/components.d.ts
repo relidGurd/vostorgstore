@@ -1,18 +1,23 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface CategoryCategory extends Schema.Component {
-  collectionName: 'components_category_categories';
+export interface ExhibitionExhibition extends Schema.Component {
+  collectionName: 'components_exhibition_exhibitions';
   info: {
-    displayName: 'category';
-    description: '';
+    displayName: 'Exhibition';
+    icon: 'chartBubble';
   };
-  attributes: {};
+  attributes: {
+    Year: Attribute.String;
+    Title: Attribute.String;
+    Place: Attribute.String;
+    City: Attribute.String;
+  };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'category.category': CategoryCategory;
+      'exhibition.exhibition': ExhibitionExhibition;
     }
   }
 }

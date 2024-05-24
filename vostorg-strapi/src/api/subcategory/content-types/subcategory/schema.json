@@ -21,10 +21,10 @@
       "target": "api::category.category",
       "inversedBy": "subcategories"
     },
-    "products": {
+    "pictures": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::product.product",
+      "target": "api::picture.picture",
       "mappedBy": "subcategory"
     }
   }
