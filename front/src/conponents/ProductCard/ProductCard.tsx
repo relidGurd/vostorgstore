@@ -25,11 +25,11 @@ const ProductCard = ({ card }: any) => {
             width={1000}
             height={1000}
             alt={"213123"}
-            src={`http://localhost:1337${attributes.product_image.data.attributes.url}`}
+            src={`http://localhost:1337${attributes.preview.data.attributes.url}`}
           />
         </div>
         <div className={styles.descriptionContainer}>
-          <span className={styles.descTitle}>{attributes.Title}</span>
+          <span className={styles.descTitle}>{attributes.title}</span>
           <span>Вася Пупкин</span>
           <span>(2022)</span>
         </div>

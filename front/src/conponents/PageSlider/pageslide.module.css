@@ -1,0 +1,43 @@
+.sceneMagaz {
+  position: relative;
+  perspective: 1000px;
+  height: 100vh;
+}
+
+.pageSlideTitle {
+  font-size: 28vh;
+  line-height: 28vh;
+}
+
+.magazTitle {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.magazBack {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 70vh;
+  height: 50vh;
+  margin: auto;
+  border-radius: 2vh;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 2px 33px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 2px 2px 33px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 2px 2px 33px 0px rgba(34, 60, 80, 0.2);
+}
+
+.magazBack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

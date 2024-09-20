@@ -42,8 +42,9 @@ button {
 }
 
 .container {
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 0 auto;
+  max-width: 2000px;
+  padding: 0 40px;
 }
 
 .container-border {

@@ -8,11 +8,11 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
     "categories": {
@@ -27,11 +27,27 @@
       "target": "api::subcategory.subcategory",
       "inversedBy": "pictures"
     },
-    "users_permissions_user": {
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "tema_kartiny": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "picture"
+      "relation": "manyToOne",
+      "target": "api::theme.theme",
+      "inversedBy": "pictures"
     }
   }
 }

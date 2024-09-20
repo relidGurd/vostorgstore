@@ -1,16 +1,35 @@
 .productContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 1rem;
+  grid-column-gap: 2rem;
   grid-row-gap: 0px;
+  margin-top: 2rem;
 }
 
 .productSectionImages {
-  grid-area: 1 / 1 / 2 / 4;
+  /* grid-area: 1 / 1 / 2 / 4; */
 }
 .productSectionInfo {
-  grid-area: 1 / 4 / 2 / 5;
+  position: relative;
+}
+
+.productInfo {
+  top: 70px;
+  position: sticky;
+}
+
+.productAuthorTitle {
+  font-size: 3rem;
+}
+
+.pictureProductTitle {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.productDescription {
+  margin: 2rem 0;
 }
 
 .swiperPreviewSlide {
@@ -33,4 +52,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.buyButton {
+  width: 100%;
+  padding: 1rem;
+  border: 3px solid var(--main-pink);
+  font-size: 25px;
+  color: var(--main-pink);
+  transition: 0.3s ease;
+}
+
+.buyButton:hover {
+  background-color: var(--main-pink);
+  color: white;
+  transition: 0.3s ease;
 }

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 
 import Image from "next/image";
+import Popup from "../Popup/Popup";
 const ContactUs = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,51 +12,36 @@ const ContactUs = () => {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 2], [-350, 350]);
+  const y = useTransform(scrollYProgress, [0, 1], [-550, 450]);
 
   return (
     <section ref={ref} className={`container`}>
       <div className={styles.contactUsContainer}>
+        <div className={styles.contactFilter}></div>
         <motion.div
-          style={{ width: "100%", height: "100%", position: "absolute", y }}
-        >
-          <Image
-            style={{
-              width: "100%",
-              height: "auto",
-              objectFit: "cover",
-            }}
-            src={"/1.webp"}
-            alt={`fdsfs`}
-            width={1000}
-            height={1000}
-          />
-        </motion.div>
-        <div
           style={{
-            zIndex: "2",
-            padding: "2rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            height: "100%",
-            color: "white",
+            y,
+            z: 50,
           }}
         >
-          <div className={styles.contactUsSection}>
-            <h2 className={styles.contactUsText}>
-              Русский букварь с иллюстрациями, при участии различных современных
-              художников.
+          <img className={styles.contactsBgImage} src="/1.webp" alt="" />
+        </motion.div>
+
+        <div className={styles.contactUsContent}>
+          <div>
+            <h2 className={styles.contactUsTitle}>
+              Оставьте заявку и мы свяжемся с Вами
             </h2>
-            <div className={styles.contactUsLogo}>
-              <LogoIcon color={"white"} />
-            </div>
           </div>
-          <div className={styles.buttonContactsSection}>
-            <div>
-              <span className={styles.contactUsTitle}>Свяжитесь с нами</span>
-            </div>
-            <button className={styles.contactsButton}>Контакты</button>
+          <div>
+            <span className={styles.agitka}>
+              Наши специалисты помогут в выборе
+            </span>
+            <Popup
+              elem={<button className={styles.agitkaButton}>Связаться</button>}
+            >
+              <div>Форма</div>
+            </Popup>
           </div>
         </div>
       </div>

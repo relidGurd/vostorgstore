@@ -1,0 +1,21 @@
+.authorBgContainer {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.authorBgImage {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorBgImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -27,6 +27,17 @@
       "relation": "manyToMany",
       "target": "api::picture.picture",
       "mappedBy": "categories"
+    },
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

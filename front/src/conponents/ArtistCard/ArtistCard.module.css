@@ -1,0 +1,41 @@
+.artistCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.artistImageContainer {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  border-radius: 3vh;
+}
+
+.artistImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.artistDescriptContaiener {
+  margin-top: 1rem;
+}
+
+.artistName {
+  display: block;
+  font-size: 3vh;
+  margin-bottom: 0.3rem;
+}
+
+.artistWork {
+  display: block;
+  font-size: 2vh;
+}
+
+.artistCard:hover img {
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+}

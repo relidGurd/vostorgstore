@@ -1,62 +1,65 @@
 "use client";
 import PageSlide from "@/conponents/PageSlider/PageSlide";
 import styles from "./store.module.css";
+import { notFound } from "next/navigation";
 
 import Link from "next/link";
 import ProductCard from "@/conponents/ProductCard/ProductCard";
 import Dropdown from "@/app/components/dropdown/Dropdown";
+import { useEffect, useState } from "react";
+import ContactUs from "@/conponents/ContactUs/ContactUs";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Skeleton from "@/conponents/Skelton/page";
+import { updateCategory } from "@/app/magaz/actions";
 
-const StoreComponent = ({ categories, products }: any) => {
+const StoreComponent = ({ categories, pictures }: any) => {
   const t = [1, 2, 3];
+
   return (
     <main>
-      <PageSlide />
-
-      <div style={{ backgroundColor: "black" }}>
+      <PageSlide title="ВРЕМЯ" subtitle="ВОСТОРГА" />
+      <div>
         <div className={styles.storeLayout}>
           <div className={`container ${styles.storeDescription}`}>
-            <h2>Название категории</h2>
-            <p style={{ width: "75%", padding: "1rem 0" }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              similique nostrum quaerat ut omnis cumque, suscipit praesentium
-              placeat repellendus totam iusto laudantium sint, fugit
-              perspiciatis magnam animi molestiae eaque tempora! Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Culpa similique
-              nostrum quaerat ut omnis cumque, suscipit praesentium placeat
-              repellendus totam iusto laudantium sint, fugit perspiciatis magnam
-              animi molestiae eaque tempora!
-            </p>
+            <h2 className={styles.categoryTitle}>Магазин Восторг</h2>
+            <p className={styles.categoryDescription}>Наш супер магазин</p>
           </div>
           <div className={styles.storeContainer}>
             <div style={{ height: "100%", position: "relative" }}>
               <ul className={styles.storeCategories}>
                 {categories.map((el: any) => (
                   <li className={styles.categoriesListItem} key={el.id}>
-                    <Link
+                    <button
                       className={styles.categoryMain}
-                      href={`/magaz/${"category=" + el.id}`}
+                      onClick={() =>
+                        updateCategory({ name: "categories", id: el.id })
+                      }
                     >
-                      {el.attributes.Title}
-                    </Link>
+                      {el.attributes.title}
+                    </button>
                     <div style={{ paddingLeft: "20px" }}>
                       {el.attributes.subcategories.data.map((el: any) => (
-                        <Link
+                        <button
                           className={styles.categorySub}
                           key={el.id}
-                          href={`/magaz/${"subcategory=" + el.id}`}
+                          onClick={() =>
+                            updateCategory({ name: "subcategory", id: el.id })
+                          }
                         >
                           {el.attributes.title}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div className={styles.storeProducts}>
               <div className={styles.filtersList}>
                 {t.map((el: any) => (
                   <Dropdown
+                    key={el}
                     button={
                       <button className={styles.filterButton}>Материал</button>
                     }
@@ -73,8 +76,9 @@ const StoreComponent = ({ categories, products }: any) => {
                   </Dropdown>
                 ))}
               </div>
+
               <ul className={styles.storeProductList}>
-                {products.map((el: any) => (
+                {pictures.map((el: any) => (
                   <ProductCard key={el.id} card={el} />
                 ))}
               </ul>

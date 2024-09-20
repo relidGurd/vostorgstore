@@ -10,11 +10,11 @@ const MainPageProducts = ({ cardList }: any) => {
     <section className={`container`}>
       <div className={styles.testContainerItem}>
         <div className={styles.containerTitle}>
-          <span>Что мы делаем</span>
+          <span>Работы наших художников</span>
         </div>
         <div className={styles.containerDescription}>
           <p className={styles.containerDescriptionText}>
-            We help brands grow and tell their stories to the world.
+            «Искусство - это линия вокруг ваших мыслей» – Густав Климт
           </p>
           <span className={styles.containerDescriptionBlink}>
             <span className={styles.blinkSlach}>_</span>10

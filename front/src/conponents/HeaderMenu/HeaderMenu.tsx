@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import { usePathname } from "next/navigation";
+import CartIcon from "@/icons/cart";
+import WhishlistIcon from "@/icons/whishlist";
 
 const HeaderMenu = () => {
   const [y, setY] = useState(0);
@@ -58,9 +60,17 @@ const HeaderMenu = () => {
             <li>Партнерам</li>
             <li>Контакты</li>
           </ul>
-          <Link className={styles.menuLink} href={`/`}>
-            Стать художником
-          </Link>
+          <div className={styles.moreInfoHeader}>
+            <Link className={styles.menuLink} href={`/`}>
+              Стать художником
+            </Link>
+            <Link href={"/cart"}>
+              <WhishlistIcon />
+            </Link>
+            <Link href={"/cart"}>
+              <CartIcon />
+            </Link>
+          </div>
         </nav>
       </div>
     </motion.div>

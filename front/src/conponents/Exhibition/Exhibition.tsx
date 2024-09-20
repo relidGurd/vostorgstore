@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 const Exhibition = () => {
   return (
     <section className={`container ${styles.exhibitionContainer}`}>
-      <h2>Выставки</h2>
+      <h2 className={styles.exhibitionMainTitle}>ТЕКУЩИЕ ВЫСТАВКИ</h2>
       <Swiper
         slidesPerView={4}
         spaceBetween={0}

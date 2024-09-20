@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_awards_awards",
+  "info": {
+    "displayName": "Awards"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

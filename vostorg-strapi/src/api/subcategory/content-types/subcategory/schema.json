@@ -26,6 +26,9 @@
       "relation": "oneToMany",
       "target": "api::picture.picture",
       "mappedBy": "subcategory"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

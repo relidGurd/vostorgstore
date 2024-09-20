@@ -64,29 +64,6 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
-    },
-    "Cart": {
-      "type": "json"
-    },
-    "Wishlist": {
-      "type": "json"
-    },
-    "order": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::order.order",
-      "mappedBy": "users_permissions_user"
-    },
-    "Shows": {
-      "type": "component",
-      "repeatable": true,
-      "component": "exhibition.exhibition"
-    },
-    "picture": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::picture.picture",
-      "mappedBy": "users_permissions_user"
     }
   }
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1984.55 2256.72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        isolation: isolate;
+        opacity: .15;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="1984.55" height="2256.72"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" x="-.88" width="1985.43" height="2252.94"/>
+    </clipPath>
+  </defs>
+  <g id="_Слой_1-2" data-name="Слой 1">
+    <g class="cls-4">
+      <g class="cls-5">
+        <g class="cls-3">
+          <polygon class="cls-2" points="620.88 2.88 2.9 2253.21 893.01 2251.87 891.95 2.47 620.88 2.88"/>
+          <polygon class="cls-2" points="1983.03 2.74 1712.89 2.47 1470.79 885.59 1469.92 4.51 1199.78 4.24 892.68 1124.49 1199.78 2244.74 1469.92 2244.47 1470.8 1359.86 1712.89 2242.97 1983.03 2242.7 1984.14 1122.72 1983.03 2.74"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

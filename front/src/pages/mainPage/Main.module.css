@@ -57,7 +57,11 @@
 
 .sectionWe {
   background-color: var(--main-green);
-  padding: 1rem;
+  background-image: url("../../../public/back.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  padding: 5rem 1rem;
   border-radius: 15px;
   position: relative;
   display: grid;
@@ -65,6 +69,7 @@
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 0px;
+  color: white;
 }
 
 .leftSide {
@@ -76,6 +81,15 @@
 .leftSideTitle {
   position: relative;
   overflow: hidden;
+}
+
+.leftSideTitleStyles {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.sectionWeColor {
+  color: var(--main-orange);
 }
 
 .leftSideTitle::after {
@@ -97,6 +111,25 @@
 }
 
 .leftSideText {
+  font-style: italic;
+  width: 75%;
   margin-left: 0.9rem;
   padding: 1rem 0;
+  font-size: 25px;
+}
+
+.leftSideText span {
+  display: inline-block;
+  color: var(--main-orange);
+}
+
+@media screen and (max-width: 980px) {
+  .sectionWe {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .leftSideTitleStyles {
+    font-size: 32px;
+  }
 }

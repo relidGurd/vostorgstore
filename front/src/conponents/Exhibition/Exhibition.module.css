@@ -2,6 +2,10 @@
   padding: 60px 0;
 }
 
+.exhibitionMainTitle {
+  margin-bottom: 2rem;
+}
+
 .exhibitionItem {
   flex-shrink: 0; /* Запрещает сжимание элементов */
   width: auto;

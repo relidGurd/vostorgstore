@@ -25,7 +25,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: black;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -36,8 +35,53 @@
   visibility: visible;
 }
 
+.firstCardBgImage {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cardBgImageMain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cardBgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  float: right;
+}
+
 .cardContainer {
   padding: 1rem;
+}
+
+.firstCardList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.cardElement {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+
+.line {
+  width: auto;
+  flex-grow: 2;
+  height: 2px;
+  background-color: #f4f4f4;
+  margin: 0 0.5rem;
 }
 
 .card:hover button {
@@ -54,19 +98,26 @@
 
 .card:nth-child(1) {
   position: relative;
-  background-color: black;
+  background-color: var(--main-orange);
   color: white;
   font-size: 40px;
-  padding-left: 66px;
 }
 
-.card:nth-child(1)::before {
-  content: url("/logo.svg");
-  width: 50px;
-  height: 50px;
-  text-align: center;
+.firstCardBg {
   position: absolute;
-  margin-left: -50px;
+  width: 100%;
+  height: 100%;
+}
+
+.mainCardImageContainer {
+  width: 150px;
+  height: 150px;
+}
+
+.mainCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card:nth-child(2) {

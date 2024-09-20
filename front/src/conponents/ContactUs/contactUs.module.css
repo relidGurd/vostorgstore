@@ -1,48 +1,62 @@
 .contactUsContainer {
-  /* background-color: #efccd9; */
-  border-radius: 1rem;
-  color: black;
-  height: 600px;
+  width: 100%;
+  height: 70vh;
+  perspective: 1000px;
+  overflow: hidden;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.contactsBgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contactUsContent {
+  position: absolute;
+  display: block;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-}
-
-.contactUsSection {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  z-index: 1;
-}
-
-.contactUsLogo {
-  text-align: right;
-}
-
-.contactUsText {
-  font-size: 50px;
-  font-weight: 500;
 }
 
 .contactUsTitle {
-  font-size: 40px;
-}
-
-.buttonContactsSection {
-  z-index: 1;
-}
-
-.contactsButton {
-  background-color: black;
-  width: 100%;
   color: white;
-  text-align: left;
-  border-radius: 1rem;
+  font-size: 50px;
+  width: 40vw;
+}
+
+.agitka {
+  display: block;
+  font-size: 32px;
+  color: white;
+}
+
+.agitkaButton {
+  width: 100%;
   padding: 1rem;
+  background-color: black;
+  border-radius: 1rem;
+  color: white;
   font-size: 25px;
-  margin-top: 1rem;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.contactFilter {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

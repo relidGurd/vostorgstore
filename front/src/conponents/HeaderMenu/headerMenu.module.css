@@ -17,7 +17,6 @@
   grid-column-gap: 16px;
   grid-row-gap: 0px;
   align-items: center;
-  padding: 0.5rem 0;
 }
 .menuList {
   display: flex;
@@ -27,6 +26,15 @@
 .menuList li {
   padding: 1rem;
   cursor: pointer;
+}
+
+.moreInfoHeader {
+  display: flex;
+  align-items: center;
+}
+
+.moreInfoHeader a {
+  margin-left: 1rem;
 }
 
 .menuLink {

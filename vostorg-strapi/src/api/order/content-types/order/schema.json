@@ -20,12 +20,6 @@
       "relation": "oneToMany",
       "target": "api::picture.picture"
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "order"
-    },
     "orderDate": {
       "type": "date"
     }

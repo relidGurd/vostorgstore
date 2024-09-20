@@ -4,12 +4,12 @@ import type { RootState } from '../store'
 
 // Define a type for the slice state
 interface CartState {
-  value: number
+  cart: Object[]
 }
 
 // Define the initial state using that type
 const initialState: CartState = {
-  value: 10,
+  cart: [],
 }
 
 export const cartSlice = createSlice({
@@ -17,22 +17,27 @@ export const cartSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    addInCart: (state, action) => {
+      console.log(state, action.payload)
+
+      
+
+      state.cart.push(action.payload)
+      localStorage.setItem('userCart', JSON.stringify(state.cart))
     },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
-    },
+    // removeItem: (state) => {
+    //   state.value -= 1
+    // },
+    // // Use the PayloadAction type to declare the contents of `action.payload`
+    // clearCart: (state, action: PayloadAction<number>) => {
+    //   state.value += action.payload
+    // },
   },
 })
 
-export const { increment, decrement, incrementByAmount } = cartSlice.actions
+export const { addInCart } = cartSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
+// export const selectCount = (state: RootState) => state.cart
 
 export default cartSlice.reducer
